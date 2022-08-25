@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\formations;
 use App\Http\Requests\StoreformationsRequest;
 use App\Http\Requests\UpdateformationsRequest;
+use Illuminate\Http\Request;
 
 class FormationsController extends Controller
 {
@@ -35,9 +36,13 @@ class FormationsController extends Controller
      * @param  \App\Http\Requests\StoreformationsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreformationsRequest $request)
+    public function store(Request $request)
     {
-        //
+        $formations = new formations;
+
+        $formations->nom = $request->nom;
+        $formations->save();
+        return redirect()->back();
     }
 
     /**
@@ -46,9 +51,10 @@ class FormationsController extends Controller
      * @param  \App\Models\formations  $formations
      * @return \Illuminate\Http\Response
      */
-    public function show(formations $formations)
+    public function show(formations $formations,$id)
     {
-        //
+        $formations = formations::find($id);
+        return view('frontend.pages.editformation', compact('formations'));
     }
 
     /**
@@ -80,8 +86,10 @@ class FormationsController extends Controller
      * @param  \App\Models\formations  $formations
      * @return \Illuminate\Http\Response
      */
-    public function destroy(formations $formations)
+    public function destroy(Request $request,$id)
     {
-        //
+        $dbformations = formations::find($id);
+        $dbformations->delete();
+        return redirect()->back();
     }
 }

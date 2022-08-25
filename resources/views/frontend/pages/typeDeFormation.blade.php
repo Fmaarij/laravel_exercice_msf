@@ -15,9 +15,9 @@
                         <td>{{ $type->id }}</td>
                         <td>{{ $type->nom }}</td>
                         <td>
-                            <a href="edittypedeformation/{{$type->id}}">
-                            <button>Edit</button>
-                        </a>
+                            <a href="edittypedeformation/{{ $type->id }}">
+                                <button>Edit</button>
+                            </a>
                         </td>
 
                         <form action="{{ $type->id }}/delete" method="post">
@@ -30,16 +30,15 @@
                 @endforeach
             </table>
         </div>
-            <hr>
-            <h1>Ajouter un type de formation</h1>
-            <div class="addtypdeformation">
-                <form action="create" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <label for="">Nom </label>
-                    <input type="text" name="nom">
-                    <button type="submit">Ajouter</button>
-                </form>
-            </div>
+        <hr>
+        <h1>Ajouter un type de formation</h1>
+        <div class="addtypdeformation">
+            <form action="create" method="post" enctype="multipart/form-data">
+                @csrf
+                <label for="">Nom </label>
+                <input type="text" name="nom">
+                <button type="submit">Ajouter</button>
+            </form>
         </div>
-
-    @endsection
+    </div>
+@endsection

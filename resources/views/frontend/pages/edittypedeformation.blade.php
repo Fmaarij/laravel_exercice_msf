@@ -1,5 +1,5 @@
 
-<h1>Update </h1>
+<h1>Update type de formation</h1>
 <div class="updatetypedeformation">
     <form action="{{$dbtypedeformation->id}}/update" method="post" enctype="multipart/form-data">
         @csrf
