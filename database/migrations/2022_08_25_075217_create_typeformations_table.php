@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('typeformations', function (Blueprint $table) {
+        Schema::create('typeformation', function (Blueprint $table) {
             $table->id();
             $table->string('nom',30);
             $table->timestamps();
