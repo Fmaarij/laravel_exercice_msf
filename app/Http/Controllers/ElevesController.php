@@ -15,7 +15,8 @@ class ElevesController extends Controller
      */
     public function index()
     {
-        //
+        $dbEleves = eleves::all();
+        return view('frontend.pages.eleves',compact('dbEleves'));
     }
 
     /**

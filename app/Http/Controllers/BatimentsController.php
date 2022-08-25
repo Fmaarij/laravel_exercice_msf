@@ -15,7 +15,8 @@ class BatimentsController extends Controller
      */
     public function index()
     {
-        //
+        $dbBatiment = batiments::all();
+        return view('frontend.pages.batiment',compact('dbBatiment'));
     }
 
     /**

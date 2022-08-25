@@ -15,7 +15,8 @@ class FormationsController extends Controller
      */
     public function index()
     {
-        //
+        $formations = formations::all();
+        return view('frontend.pages.formation',compact('formations'));
     }
 
     /**

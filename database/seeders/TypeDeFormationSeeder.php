@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TypeformationSeeder extends Seeder
+class TypeDeFormationSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,7 +15,7 @@ class TypeformationSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('typeformation')->insert([[
+        DB::table('typedeformations')->insert([[
             'nom' => 'Type longue ',
         ],
         [
@@ -56,5 +56,4 @@ class TypeformationSeeder extends Seeder
         ]
     ]);
     }
-    }
-
+}
