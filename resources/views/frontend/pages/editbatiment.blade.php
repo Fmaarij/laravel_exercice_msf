@@ -1,11 +1,13 @@
-
 <h1>Update batiment</h1>
 <div class="updatebatiment">
-    <form action="{{$dbbatiment->id}}/update" method="post" enctype="multipart/form-data">
+    <form action="{{ $dbBatiment->id }}/update" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <label for="">Nom </label>
-        <input type="text" name="nom" value="{{$dbbatiment->nom}}">
+        <input type="text" name="nom" value="{{ $dbBatiment->nom }}">
+
+        <label for="">Description </label>
+        <input type="text" name="description" value="{{ $dbBatiment->description }}">
         <button type="submit">Update</button>
     </form>
 </div>

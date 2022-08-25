@@ -22,11 +22,11 @@
                         <td>{{ $eleve->age }}</td>
                         <td>{{ $eleve->etat }}</td>
                         <td>
-                            <a href="editeleve/{{$eleve->id }}">
+                            <a href="/editeleve/{{ $eleve->id }}">
                                 <button>Edit</button>
                             </a>
                         </td>
-                        <form action="{{ $eleve->id }}/delete" method="post">
+                        <form action="/{{ $eleve->id }}/deleleve" method="post">
                             @csrf
                             @method('DELETE')
                             <td><button class="bg-danger border rounded">Delete</button></td>
@@ -38,16 +38,18 @@
         <hr>
         <div class="addeleve">
             <h1>Ajouter un eleve</h1>
-            <form action="create" method="post" enctype="multipart/form-data">
+            <form action="createeleve" method="post" enctype="multipart/form-data">
                 @csrf
                 <label for="">Nom </label>
                 <input type="text" name="nom">
                 <label for="">Prenom </label>
-                <input type="text" name="nom" va>
+
+                <input type="text" name="prenom" va>
                 <label for="">Age </label>
                 <input type="number" name="age">
                 <label for="">Etat </label>
-                <input type="boolean" name="etat" >
+
+                <input type="boolean" name="etat" placeholder="0 Or 1">
                 <button type="submit">Ajouter</button>
             </form>
         </div>

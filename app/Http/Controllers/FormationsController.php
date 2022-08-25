@@ -41,6 +41,8 @@ class FormationsController extends Controller
         $formations = new formations;
 
         $formations->nom = $request->nom;
+        $formations->description = $request->description;
+
         $formations->save();
         return redirect()->back();
     }
@@ -75,9 +77,13 @@ class FormationsController extends Controller
      * @param  \App\Models\formations  $formations
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateformationsRequest $request, formations $formations)
+    public function update(Request $request,$id)
     {
-        //
+        $formations = formations::find($id);
+        $formations->nom = $request->nom;
+        $formations->description = $request->description;
+        $formations->save();
+        return redirect('formation');
     }
 
     /**
@@ -86,10 +92,10 @@ class FormationsController extends Controller
      * @param  \App\Models\formations  $formations
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id)
+    public function destroy(Request $request ,$id)
     {
-        $dbformations = formations::find($id);
-        $dbformations->delete();
+        $formations = formations::find($id);
+        $formations->delete();
         return redirect()->back();
     }
 }
