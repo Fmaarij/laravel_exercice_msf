@@ -5,6 +5,8 @@
     <tr>
         <th>ID</th>
         <th>Nom</th>
+        <th>Edit</th>
+        <th>Delete</th>
 
 
     </tr>

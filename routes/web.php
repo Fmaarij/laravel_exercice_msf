@@ -23,10 +23,11 @@ Route::get('/batiment', [BatimentsController::class,'index'])->name('batiment');
 Route::get('/formation', [FormationsController::class,'index'])->name('formation');
 Route::get('/typeDeFormation', [TypeDeFormationController::class,'index'])->name('typeDeFormation');
 
-
-// <ul>
-//     <li><a href="{{route('eleves')}}">Eleves</a></li>
-//     <li><a href="{{route('batiment')}}">Batiment</a></li>
-//     <li><a href="{{route('formation')}}">Formation</a></li>
-//     <li><a href="{{route('typeDeFormation')}}">TypeDeFormation</a></li>
-// </ul>
+//delete typdeformation
+Route::delete('/{id}/delete', [TypeDeFormationController::class,'destroy']);
+//create/store de donnée
+Route::post('create', [TypeDeFormationController::class,'store']);
+//show
+Route::get('edittypedeformation/{id}', [TypeDeFormationController::class,'show']);
+//update typedeformation
+Route::put('edittypedeformation/{id}/update', [TypeDeFormationController::class,'update']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Typedeformation;
 use App\Http\Requests\StoreTypeDeFormationRequest;
 use App\Http\Requests\UpdateTypeDeFormationRequest;
+use Illuminate\Http\Request;
 
 class TypeDeFormationController extends Controller
 {
@@ -35,9 +36,13 @@ class TypeDeFormationController extends Controller
      * @param  \App\Http\Requests\StoreTypeDeFormationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTypeDeFormationRequest $request)
+    public function store(Request $request)
     {
-        //
+        $dbtypedeformation = new Typedeformation;
+
+        $dbtypedeformation->nom = $request->nom;
+        $dbtypedeformation->save();
+        return redirect()->back();
     }
 
     /**
@@ -46,9 +51,10 @@ class TypeDeFormationController extends Controller
      * @param  \App\Models\TypeDeFormation  $typeDeFormation
      * @return \Illuminate\Http\Response
      */
-    public function show(TypeDeFormation $typeDeFormation)
+    public function show(TypeDeFormation $typeDeFormation,$id)
     {
-        //
+        $dbtypedeformation = Typedeformation::find($id);
+        return view('frontend.pages.edittypedeformation', compact('dbtypedeformation'));
     }
 
     /**
@@ -69,9 +75,13 @@ class TypeDeFormationController extends Controller
      * @param  \App\Models\TypeDeFormation  $typeDeFormation
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTypeDeFormationRequest $request, TypeDeFormation $typeDeFormation)
+    public function update(Request $request, $id)
     {
-        //
+        $dbtypedeformation = Typedeformation::find($id);
+        $dbtypedeformation->nom = $request->nom;
+        $dbtypedeformation->save();
+        return redirect('typeDeFormation');
+
     }
 
     /**
@@ -80,8 +90,10 @@ class TypeDeFormationController extends Controller
      * @param  \App\Models\TypeDeFormation  $typeDeFormation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TypeDeFormation $typeDeFormation)
+    public function destroy(TypeDeFormation $typeDeFormation,$id)
     {
-        //
+        $dbtypedeformation = Typedeformation::find($id);
+        $dbtypedeformation->delete();
+        return redirect()->back();
     }
 }
