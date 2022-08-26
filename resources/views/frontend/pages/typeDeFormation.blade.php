@@ -3,7 +3,7 @@
     <div class="container">
         <div class="typedeformation">
             <h1>DB Type De Formation</h1>
-            <table>
+            <table  class="table table-striped table-bordered table-hover">
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
@@ -16,7 +16,7 @@
                         <td>{{ $type->nom }}</td>
                         <td>
                             <a href="edittypedeformation/{{ $type->id }}">
-                                <button>Edit</button>
+                                <button class="bg-warning border rounded">Edit</button>
                             </a>
                         </td>
 

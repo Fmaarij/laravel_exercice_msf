@@ -3,7 +3,7 @@
     <div class="container">
         <div class="showDB">
             <h1>DB Formation</h1>
-            <table>
+            <table  class="table table-striped table-bordered table-hover">
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
@@ -18,7 +18,7 @@
                         <td>{{ $formation->description }}</td>
                         <td>
                             <a href="editformation/{{ $formation->id }}">
-                                <button>Edit</button>
+                                <button class="bg-warning border rounded">Edit</button>
                             </a>
                         </td>
                         <form action="{{ $formation->id }}/delet" method="post">

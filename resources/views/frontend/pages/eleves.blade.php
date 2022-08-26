@@ -3,7 +3,7 @@
     <div class="container">
         <div class="affichageDB">
             <h1>DB Eleves</h1>
-            <table>
+            <table  class="table table-striped table-bordered table-hover">
                 <tr>
                     <th>ID</th>
                     <th>Nom</th>
@@ -23,7 +23,7 @@
                         <td>{{ $eleve->etat }}</td>
                         <td>
                             <a href="/editeleve/{{ $eleve->id }}">
-                                <button>Edit</button>
+                                <button class="bg-warning border rounded">Edit</button>
                             </a>
                         </td>
                         <form action="/{{ $eleve->id }}/deleleve" method="post">
