@@ -31,13 +31,13 @@
             </table>
         </div>
         <hr>
-        <h1>Ajouter un type de formation</h1>
-        <div class="addtypdeformation">
-            <form action="create" method="post" enctype="multipart/form-data">
+        <div class="addtypdeformation mt-5 mb-5 ">
+            <h1 class="fs-3 mb-5">Ajouter un type de formation</h1>
+            <form action="create" method="post" enctype="multipart/form-data" class="mb-5">
                 @csrf
                 <label for="">Nom </label>
-                <input type="text" name="nom">
-                <button type="submit">Ajouter</button>
+                <input class="bg-gray-200"   type="text" name="nom">
+                <button class="bg-blue-500 rounded text-white p-1" type="submit">Ajouter</button>
             </form>
         </div>
     </div>

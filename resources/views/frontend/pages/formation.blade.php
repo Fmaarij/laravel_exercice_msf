@@ -31,15 +31,15 @@
             </table>
         </div>
         <hr>
-        <div class="addformation">
-            <h1>Ajouter un formation</h1>
-            <form action="createFormation" method="post" enctype="multipart/form-data">
+        <div class="addformation mt-5 mb-5 ">
+            <h1 class="fs-3 mb-5">Ajouter une formation</h1>
+            <form action="createFormation" method="post" enctype="multipart/form-data" class="mb-5">
                 @csrf
                 <label for="">Nom </label>
-                <input type="text" name="nom">
+                <input class="bg-gray-200"   type="text" name="nom">
                 <label for="">Description </label>
-                <input type="text" name="description">
-                <button type="submit">Ajouter</button>
+                <input class="bg-gray-200"   type="text" name="description">
+                <button class="bg-blue-500 rounded text-white p-1" type="submit">Ajouter</button>
             </form>
         </div>
     </div>

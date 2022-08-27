@@ -31,17 +31,17 @@
             </table>
         </div>
         <hr>
-        <div class="addbatiment">
-            <h1>Ajouter une batiment</h1>
-            <form action="/createBatiment" method="post" enctype="multipart/form-data">
+        <div class="addbatiment mt-5 mb-5 ">
+            <h1 class="fs-3 mb-5">Ajouter un batiment</h1>
+            <form action="/createBatiment" method="post" enctype="multipart/form-data" class="mb-5">
                 @csrf
                 <label for="">Nom</label>
-                <input type="text" name="nom">
+                <input class="bg-gray-200"  type="text" name="nom">
 
                 <label for="">Description</label>
-                <input type="text" name="description">
+                <input class="bg-gray-200"  type="text" name="description">
 
-                <button type="submit">Ajouter</button>
+                <button class="bg-blue-500 rounded text-white p-1" type="submit">Ajouter</button>
             </form>
         </div>
     </div>
